@@ -1,14 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dn3ui18fs0sxx"]
+[gd_scene load_steps=8 format=3 uid="uid://dn3ui18fs0sxx"]
 
 [ext_resource type="PackedScene" uid="uid://p744hj8krrov" path="res://characters/player.tscn" id="1_vvnsp"]
 
-[sub_resource type="Sky" id="Sky_vvnsp"]
-
-[sub_resource type="Environment" id="Environment_a6qp7"]
+[sub_resource type="Environment" id="Environment_vvnsp"]
 background_mode = 2
-sky = SubResource("Sky_vvnsp")
-tonemap_mode = 2
-glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rhmkl"]
 albedo_color = Color(0.65098, 0.611765, 0.803922, 1)
@@ -37,7 +32,7 @@ transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_a6qp7")
+environment = SubResource("Environment_vvnsp")
 
 [node name="Player" parent="." instance=ExtResource("1_vvnsp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.128843, -0.0336112, -0.049464)
