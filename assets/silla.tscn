@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://bkxyffcag7cug"]
+
+[ext_resource type="Material" uid="uid://camll6muihy5w" path="res://materiales/materialSillaNegra.tres" id="1_ios14"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_pmn6r"]
+material = ExtResource("1_ios14")
+size = Vector3(0.4, 0.05, 0.4)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_pmn6r"]
+material = ExtResource("1_ios14")
+top_radius = 0.02
+bottom_radius = 0.02
+height = 0.4
+
+[sub_resource type="BoxMesh" id="BoxMesh_w86uo"]
+material = ExtResource("1_ios14")
+size = Vector3(0.4, 0.5, 0.05)
+
+[node name="Silla" type="Node3D"]
+
+[node name="Asiento" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+mesh = SubResource("BoxMesh_pmn6r")
+
+[node name="PataA" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.183444, 0.223532, 0.17901)
+mesh = SubResource("CylinderMesh_pmn6r")
+skeleton = NodePath("../Asiento")
+
+[node name="PataA2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.181167, 0.223532, 0.179735)
+mesh = SubResource("CylinderMesh_pmn6r")
+skeleton = NodePath("../Asiento")
+
+[node name="PataA3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.183444, 0.223532, -0.17369)
+mesh = SubResource("CylinderMesh_pmn6r")
+skeleton = NodePath("../Asiento")
+
+[node name="PataA4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.181167, 0.223532, -0.172964)
+mesh = SubResource("CylinderMesh_pmn6r")
+skeleton = NodePath("../Asiento")
+
+[node name="respaldo" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.820107, 0, 0, 0, 1, 0.00732908, 0.63746, -0.171676)
+material_override = ExtResource("1_ios14")
+mesh = SubResource("BoxMesh_w86uo")

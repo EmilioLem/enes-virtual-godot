@@ -1,0 +1,206 @@
+[gd_scene load_steps=18 format=3 uid="uid://bvv30it10xigl"]
+
+[ext_resource type="Material" uid="uid://c3wrr772bolc2" path="res://materiales/pisoLoceta2.tres" id="1_1elns"]
+[ext_resource type="Material" uid="uid://hgnt1o0yoyps" path="res://materiales/pisoLoceta.tres" id="1_k6r0r"]
+[ext_resource type="Material" uid="uid://6w7jfbs32x28" path="res://materiales/materialPizarron.tres" id="3_j1nf1"]
+[ext_resource type="PackedScene" uid="uid://bkxyffcag7cug" path="res://assets/silla.tscn" id="4_v3uhc"]
+[ext_resource type="PackedScene" uid="uid://b1chuojd01nu3" path="res://assets/mesa.tscn" id="5_j1nf1"]
+[ext_resource type="PackedScene" uid="uid://chst1ob0r7tna" path="res://assets/panelSalonEstandar.tscn" id="6_01p35"]
+[ext_resource type="PackedScene" uid="uid://dr1f55iu2kdq8" path="res://assets/mesaProfe.tscn" id="6_v3uhc"]
+[ext_resource type="PackedScene" uid="uid://nltnvfx7xxoe" path="res://assets/panelSalonVentanas.tscn" id="8_mbtn5"]
+[ext_resource type="PackedScene" uid="uid://bbq8jy1d6soe0" path="res://assets/panelSalonVentanaContinua.tscn" id="8_xns5u"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_o16df"]
+material = ExtResource("1_1elns")
+size = Vector2(10.05, 7.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_01p35"]
+material = ExtResource("1_1elns")
+size = Vector3(15, 0.1, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mbtn5"]
+material = ExtResource("1_k6r0r")
+size = Vector3(1.025, 2.5, 0.05)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xns5u"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_r4nxm"]
+material = ExtResource("3_j1nf1")
+size = Vector3(6.55, 2.31, 0.065)
+
+[sub_resource type="BoxMesh" id="BoxMesh_c35xq"]
+size = Vector3(0.25, 2.3, 0.25)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_01p35"]
+transparency = 1
+blend_mode = 1
+
+[sub_resource type="BoxMesh" id="BoxMesh_g08vo"]
+material = SubResource("StandardMaterial3D_01p35")
+size = Vector3(0.345, 1.3, 0.02)
+
+[node name="Salon" type="Node3D"]
+
+[node name="Piso" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38, 0, -1.115)
+mesh = SubResource("PlaneMesh_o16df")
+
+[node name="pisoFirme" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.986312, 0.164893, 0, -0.164893, -0.986312, 0, 0, 0, 1, 0, 0, 0)
+visible = false
+mesh = SubResource("BoxMesh_01p35")
+
+[node name="Puerta" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -5.0377, 1.24506, -3.99264)
+mesh = SubResource("BoxMesh_mbtn5")
+
+[node name="OtroPanelPuerta" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0757202, 0, 0, 0, 2.48957, 0, 0, 0, 0.928975, -4.04556, 1.26161, -4.40524)
+mesh = SubResource("BoxMesh_xns5u")
+
+[node name="OtroPanelPuerta2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-3.30983e-09, 0, -0.928975, 0, 2.48957, 0, 0.0757202, 0, -4.06068e-08, -3.52701, 1.26161, -4.82361)
+mesh = SubResource("BoxMesh_xns5u")
+
+[node name="Pizarron" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.186836, 1.296, -4.787)
+mesh = SubResource("BoxMesh_r4nxm")
+
+[node name="MesaProfe" parent="." instance=ExtResource("6_v3uhc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9839, 0, -3.57296)
+
+[node name="SillaProfe" parent="." instance=ExtResource("4_v3uhc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.95159, 2.38419e-07, -4.20421)
+
+[node name="Paredes" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Paredes"]
+
+[node name="PanelSalonEstandar" parent="Paredes" instance=ExtResource("6_01p35")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.04237, -2.38419e-07, -3.48705)
+
+[node name="PanelSalonEstandar2" parent="Paredes" instance=ExtResource("6_01p35")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.31603, 0, -4.13292)
+
+[node name="PanelSalonEstandar3" parent="Paredes" instance=ExtResource("6_01p35")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.54413, 0, -2.9891)
+
+[node name="PanelSalonEstandar4" parent="Paredes" instance=ExtResource("6_01p35")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.54413, 0, -1.79035)
+
+[node name="PanelSalonEstandar5" parent="Paredes" instance=ExtResource("6_01p35")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.54413, 0, -0.594662)
+
+[node name="PanelSalonEstandar6" parent="Paredes" instance=ExtResource("6_01p35")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.54413, 0, 0.607036)
+
+[node name="PanelSalonEstandar7" parent="Paredes" instance=ExtResource("6_01p35")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.54413, 0, 1.81273)
+
+[node name="PanelSalonEstandar8" parent="Paredes" instance=ExtResource("6_01p35")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.28384, 0, 1.80736)
+
+[node name="PanelSalonEstandar9" parent="Paredes" instance=ExtResource("6_01p35")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.28384, 0, 0.608614)
+
+[node name="PanelSalonEstandar10" parent="Paredes" instance=ExtResource("6_01p35")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.28384, 0, -0.587078)
+
+[node name="PanelSalonEstandar11" parent="Paredes" instance=ExtResource("6_01p35")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.28384, 0, -1.78878)
+
+[node name="PanelSalonEstandar12" parent="Paredes" instance=ExtResource("6_01p35")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.28384, 0, -2.99447)
+
+[node name="ventanaEsquina" parent="Paredes" instance=ExtResource("8_mbtn5")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -4.58713, 0, 2.50916)
+
+[node name="ventanaEsquina2" parent="Paredes" instance=ExtResource("8_mbtn5")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 3.81451, 0, 2.50916)
+
+[node name="PanelSalonEstandar13" parent="Paredes" instance=ExtResource("8_xns5u")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 2.61322, 0, 2.51077)
+
+[node name="PanelSalonEstandar14" parent="Paredes" instance=ExtResource("8_xns5u")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 1.40826, 0, 2.51077)
+
+[node name="PanelSalonEstandar15" parent="Paredes" instance=ExtResource("8_xns5u")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.207503, 0, 2.51077)
+
+[node name="PanelSalonEstandar16" parent="Paredes" instance=ExtResource("8_xns5u")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -1.00018, 0, 2.51077)
+
+[node name="PanelSalonEstandar17" parent="Paredes" instance=ExtResource("8_xns5u")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -2.18962, 0, 2.51077)
+
+[node name="PanelSalonEstandar18" parent="Paredes" instance=ExtResource("8_xns5u")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -3.38867, 0, 2.51077)
+
+[node name="bloqueEsquina" type="MeshInstance3D" parent="Paredes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.278, 1.15, 2.514)
+mesh = SubResource("BoxMesh_c35xq")
+
+[node name="bloqueEsquina2" type="MeshInstance3D" parent="Paredes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.51777, 1.15, 2.514)
+mesh = SubResource("BoxMesh_c35xq")
+
+[node name="nodoMesasYsillas" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.06417, 0, -0.459948)
+
+[node name="Silla" parent="nodoMesasYsillas" instance=ExtResource("4_v3uhc")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -4.19268, 0, -1.35209)
+
+[node name="Silla2" parent="nodoMesasYsillas" instance=ExtResource("4_v3uhc")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -1.25965, 0, -1.24737)
+
+[node name="Silla3" parent="nodoMesasYsillas" instance=ExtResource("4_v3uhc")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -2.76886, 0, -0.368217)
+
+[node name="Mesa" parent="nodoMesasYsillas" instance=ExtResource("5_j1nf1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.23105, 0, -1.81752)
+
+[node name="Mesa2" parent="nodoMesasYsillas" instance=ExtResource("5_j1nf1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.82192, 0, -0.776692)
+
+[node name="Mesa3" parent="nodoMesasYsillas" instance=ExtResource("5_j1nf1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.22661, 0, -1.53182)
+
+[node name="Silla4" parent="nodoMesasYsillas" instance=ExtResource("4_v3uhc")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -3.95788, 0, 0.637715)
+
+[node name="Silla5" parent="nodoMesasYsillas" instance=ExtResource("4_v3uhc")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -1.02485, 0, 0.742432)
+
+[node name="Silla6" parent="nodoMesasYsillas" instance=ExtResource("4_v3uhc")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -2.53407, 0, 1.62159)
+
+[node name="Mesa4" parent="nodoMesasYsillas" instance=ExtResource("5_j1nf1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.99626, 0, 0.172287)
+
+[node name="Mesa5" parent="nodoMesasYsillas" instance=ExtResource("5_j1nf1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.58712, 0, 1.21311)
+
+[node name="Mesa6" parent="nodoMesasYsillas" instance=ExtResource("5_j1nf1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.991813, 0, 0.457984)
+
+[node name="Silla7" parent="nodoMesasYsillas" instance=ExtResource("4_v3uhc")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.775357, 0, -1.0401)
+
+[node name="Silla8" parent="nodoMesasYsillas" instance=ExtResource("4_v3uhc")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 1.09224, 0, 1.66223)
+
+[node name="Silla9" parent="nodoMesasYsillas" instance=ExtResource("4_v3uhc")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 2.19918, 0, -0.0562303)
+
+[node name="Mesa7" parent="nodoMesasYsillas" instance=ExtResource("5_j1nf1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.736984, 0, -1.50553)
+
+[node name="Mesa8" parent="nodoMesasYsillas" instance=ExtResource("5_j1nf1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.14612, 0, -0.464706)
+
+[node name="Mesa9" parent="nodoMesasYsillas" instance=ExtResource("5_j1nf1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.16776, 0, 1.14861)
+
+[node name="Cristal" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.57006, 1.36011, -4.77224)
+mesh = SubResource("BoxMesh_g08vo")

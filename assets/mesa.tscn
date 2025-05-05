@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://b1chuojd01nu3"]
+
+[ext_resource type="Material" uid="uid://camll6muihy5w" path="res://materiales/materialSillaNegra.tres" id="1_mp18h"]
+[ext_resource type="Material" uid="uid://by5mrb01706qv" path="res://materiales/maderaMesa.tres" id="2_88o4p"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1fr5t"]
+material = ExtResource("1_mp18h")
+size = Vector3(0.5, 0.05, 0.02)
+
+[sub_resource type="BoxMesh" id="BoxMesh_r88y8"]
+material = ExtResource("1_mp18h")
+size = Vector3(0.02, 0.5, 0.02)
+
+[sub_resource type="PrismMesh" id="PrismMesh_yc8cd"]
+material = ExtResource("2_88o4p")
+size = Vector3(0.6, 0.6, 0.02)
+
+[node name="Mesa" type="Node3D"]
+
+[node name="BarraIzquierda" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, -0.421863, 0, 0)
+mesh = SubResource("BoxMesh_1fr5t")
+
+[node name="BarraIzquierda2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, 0.393746, 0, 0)
+mesh = SubResource("BoxMesh_1fr5t")
+
+[node name="BarraIzquierda3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, -0.421863, 0.543974, 0)
+mesh = SubResource("BoxMesh_1fr5t")
+
+[node name="BarraIzquierda4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, 0.393746, 0.543974, 0)
+mesh = SubResource("BoxMesh_1fr5t")
+
+[node name="BarraVertical" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.422569, 0.274972, 0.0138604)
+mesh = SubResource("BoxMesh_r88y8")
+
+[node name="BarraVertical2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.395069, 0.274972, 0.0138604)
+mesh = SubResource("BoxMesh_r88y8")
+
+[node name="madera" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, -8.74228e-08, -3.82137e-15, 0, -4.37114e-08, 1, -8.74228e-08, 1, 4.37114e-08, -0.0190592, 0.579084, 0)
+mesh = SubResource("PrismMesh_yc8cd")
+
+[node name="madera2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 1.74846e-07, 7.64274e-15, 0, -4.37114e-08, 1, 1.74846e-07, -1, -4.37114e-08, -0.317755, 0.579084, 0)
+mesh = SubResource("PrismMesh_yc8cd")
+
+[node name="madera3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 1.74846e-07, 7.64274e-15, 0, -4.37114e-08, 1, 1.74846e-07, -1, -4.37114e-08, 0.276437, 0.579084, 0)
+mesh = SubResource("PrismMesh_yc8cd")

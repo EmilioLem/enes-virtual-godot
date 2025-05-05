@@ -1,0 +1,255 @@
+[gd_scene load_steps=15 format=3 uid="uid://chst1ob0r7tna"]
+
+[ext_resource type="Material" uid="uid://2mpjxin41ifj" path="res://materiales/maderaParedes.tres" id="1_sm8fj"]
+[ext_resource type="Material" uid="uid://c3wrr772bolc2" path="res://materiales/pisoLoceta2.tres" id="2_oh5sx"]
+[ext_resource type="Material" uid="uid://camll6muihy5w" path="res://materiales/materialSillaNegra.tres" id="3_xa1nt"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ppd20"]
+material = ExtResource("1_sm8fj")
+size = Vector3(1.2, 0.5, 0.25)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6ttit"]
+material = ExtResource("2_oh5sx")
+size = Vector3(1.2, 0.2, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_k2xop"]
+material = ExtResource("3_xa1nt")
+size = Vector3(1.2, 0.15, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_103sp"]
+material = ExtResource("3_xa1nt")
+size = Vector3(1.2, 0.015, 0.015)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bmeun"]
+material = ExtResource("3_xa1nt")
+size = Vector3(0.01, 0.25, 0.25)
+
+[sub_resource type="BoxMesh" id="BoxMesh_sm8fj"]
+material = ExtResource("1_sm8fj")
+size = Vector3(1.2, 1.8, 0.02)
+
+[sub_resource type="BoxMesh" id="BoxMesh_oh5sx"]
+material = ExtResource("3_xa1nt")
+size = Vector3(0.01, 1.8, 0.02)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xa1nt"]
+material = ExtResource("3_xa1nt")
+size = Vector3(1.2, 0.35, 0.01)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_fhetq"]
+material = ExtResource("3_xa1nt")
+top_radius = 0.01
+bottom_radius = 0.01
+height = 0.02
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ppd20"]
+albedo_color = Color(0.64147, 0.439292, 0.341898, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_fhetq"]
+material = SubResource("StandardMaterial3D_ppd20")
+size = Vector3(0.02, 0.28, 0.02)
+
+[node name="PanelSalonEstandar" type="Node3D"]
+
+[node name="Base" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+mesh = SubResource("BoxMesh_ppd20")
+
+[node name="extensionLoceta" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0.085)
+mesh = SubResource("BoxMesh_6ttit")
+
+[node name="parteNegra" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.270131, 0.108929)
+mesh = SubResource("BoxMesh_k2xop")
+
+[node name="parteNegra2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.87775, -0.072)
+mesh = SubResource("BoxMesh_k2xop")
+
+[node name="becielNegro" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.493991, 0.118055)
+mesh = SubResource("BoxMesh_103sp")
+
+[node name="divisorMedio" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.597831, 0.376194, 0.000590362)
+mesh = SubResource("BoxMesh_bmeun")
+
+[node name="divisorMedio2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.598795, 0.376194, 0.000590362)
+mesh = SubResource("BoxMesh_bmeun")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, -0.113094)
+mesh = SubResource("BoxMesh_sm8fj")
+
+[node name="divisorAlto" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.598944, 0.9, -0.108503)
+mesh = SubResource("BoxMesh_oh5sx")
+
+[node name="divisorAlto2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.594136, 0.9, -0.108503)
+mesh = SubResource("BoxMesh_oh5sx")
+
+[node name="fondoDeBarrasNegro" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.13089, -0.115233)
+mesh = SubResource("BoxMesh_xa1nt")
+
+[node name="nodoBotoncitos" type="Node3D" parent="."]
+
+[node name="botoncito" type="MeshInstance3D" parent="nodoBotoncitos"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.407248, 0.302852)
+mesh = SubResource("CylinderMesh_fhetq")
+skeleton = NodePath("")
+
+[node name="botoncito2" type="MeshInstance3D" parent="nodoBotoncitos"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.434732, 0.407248, 0.11999)
+mesh = SubResource("CylinderMesh_fhetq")
+skeleton = NodePath("")
+
+[node name="botoncito3" type="MeshInstance3D" parent="nodoBotoncitos"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.412619, 0.407248, 0.11999)
+mesh = SubResource("CylinderMesh_fhetq")
+skeleton = NodePath("")
+
+[node name="botoncito4" type="MeshInstance3D" parent="nodoBotoncitos"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.548557, -0.10754)
+mesh = SubResource("CylinderMesh_fhetq")
+skeleton = NodePath("")
+
+[node name="botoncito5" type="MeshInstance3D" parent="nodoBotoncitos"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.434732, 0.548557, -0.10754)
+mesh = SubResource("CylinderMesh_fhetq")
+skeleton = NodePath("")
+
+[node name="botoncito6" type="MeshInstance3D" parent="nodoBotoncitos"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.412619, 0.548557, -0.10754)
+mesh = SubResource("CylinderMesh_fhetq")
+skeleton = NodePath("")
+
+[node name="botoncito7" type="MeshInstance3D" parent="nodoBotoncitos"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.72671, -0.10754)
+mesh = SubResource("CylinderMesh_fhetq")
+skeleton = NodePath("")
+
+[node name="botoncito8" type="MeshInstance3D" parent="nodoBotoncitos"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.434732, 1.72671, -0.10754)
+mesh = SubResource("CylinderMesh_fhetq")
+skeleton = NodePath("")
+
+[node name="botoncito9" type="MeshInstance3D" parent="nodoBotoncitos"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.412619, 1.72671, -0.10754)
+mesh = SubResource("CylinderMesh_fhetq")
+skeleton = NodePath("")
+
+[node name="botoncito10" type="MeshInstance3D" parent="nodoBotoncitos"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.0254, -0.10754)
+mesh = SubResource("CylinderMesh_fhetq")
+skeleton = NodePath("")
+
+[node name="botoncito11" type="MeshInstance3D" parent="nodoBotoncitos"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.434732, 1.0254, -0.10754)
+mesh = SubResource("CylinderMesh_fhetq")
+skeleton = NodePath("")
+
+[node name="botoncito12" type="MeshInstance3D" parent="nodoBotoncitos"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.412619, 1.0254, -0.10754)
+mesh = SubResource("CylinderMesh_fhetq")
+skeleton = NodePath("")
+
+[node name="botoncito13" type="MeshInstance3D" parent="nodoBotoncitos"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.12678, -0.10754)
+mesh = SubResource("CylinderMesh_fhetq")
+skeleton = NodePath("")
+
+[node name="botoncito14" type="MeshInstance3D" parent="nodoBotoncitos"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.434732, 1.12678, -0.10754)
+mesh = SubResource("CylinderMesh_fhetq")
+skeleton = NodePath("")
+
+[node name="botoncito15" type="MeshInstance3D" parent="nodoBotoncitos"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.412619, 1.12678, -0.10754)
+mesh = SubResource("CylinderMesh_fhetq")
+skeleton = NodePath("")
+
+[node name="barrasSuperiores" type="Node3D" parent="."]
+
+[node name="barraSuperiorCafe" type="MeshInstance3D" parent="barrasSuperiores"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.556286, 2.12474, -0.108804)
+mesh = SubResource("BoxMesh_fhetq")
+skeleton = NodePath("")
+
+[node name="barraSuperiorCafe2" type="MeshInstance3D" parent="barrasSuperiores"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48225, 2.12474, -0.108804)
+mesh = SubResource("BoxMesh_fhetq")
+skeleton = NodePath("")
+
+[node name="barraSuperiorCafe3" type="MeshInstance3D" parent="barrasSuperiores"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.412687, 2.12474, -0.108804)
+mesh = SubResource("BoxMesh_fhetq")
+skeleton = NodePath("")
+
+[node name="barraSuperiorCafe4" type="MeshInstance3D" parent="barrasSuperiores"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.335433, 2.12474, -0.108804)
+mesh = SubResource("BoxMesh_fhetq")
+skeleton = NodePath("")
+
+[node name="barraSuperiorCafe5" type="MeshInstance3D" parent="barrasSuperiores"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.255825, 2.12474, -0.108804)
+mesh = SubResource("BoxMesh_fhetq")
+skeleton = NodePath("")
+
+[node name="barraSuperiorCafe6" type="MeshInstance3D" parent="barrasSuperiores"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.173298, 2.12474, -0.108804)
+mesh = SubResource("BoxMesh_fhetq")
+skeleton = NodePath("")
+
+[node name="barraSuperiorCafe7" type="MeshInstance3D" parent="barrasSuperiores"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0969338, 2.12474, -0.108804)
+mesh = SubResource("BoxMesh_fhetq")
+skeleton = NodePath("")
+
+[node name="barraSuperiorCafe8" type="MeshInstance3D" parent="barrasSuperiores"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0113306, 2.12474, -0.108804)
+mesh = SubResource("BoxMesh_fhetq")
+skeleton = NodePath("")
+
+[node name="barraSuperiorCafe9" type="MeshInstance3D" parent="barrasSuperiores"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0775166, 2.12474, -0.108804)
+mesh = SubResource("BoxMesh_fhetq")
+skeleton = NodePath("")
+
+[node name="barraSuperiorCafe10" type="MeshInstance3D" parent="barrasSuperiores"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.148496, 2.12474, -0.108804)
+mesh = SubResource("BoxMesh_fhetq")
+skeleton = NodePath("")
+
+[node name="barraSuperiorCafe11" type="MeshInstance3D" parent="barrasSuperiores"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.220395, 2.12474, -0.108804)
+mesh = SubResource("BoxMesh_fhetq")
+skeleton = NodePath("")
+
+[node name="barraSuperiorCafe12" type="MeshInstance3D" parent="barrasSuperiores"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.294609, 2.12474, -0.108804)
+mesh = SubResource("BoxMesh_fhetq")
+skeleton = NodePath("")
+
+[node name="barraSuperiorCafe13" type="MeshInstance3D" parent="barrasSuperiores"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.369508, 2.12474, -0.108804)
+mesh = SubResource("BoxMesh_fhetq")
+skeleton = NodePath("")
+
+[node name="barraSuperiorCafe14" type="MeshInstance3D" parent="barrasSuperiores"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.437263, 2.12474, -0.108804)
+mesh = SubResource("BoxMesh_fhetq")
+skeleton = NodePath("")
+
+[node name="barraSuperiorCafe15" type="MeshInstance3D" parent="barrasSuperiores"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.509087, 2.12474, -0.108804)
+mesh = SubResource("BoxMesh_fhetq")
+skeleton = NodePath("")
+
+[node name="barraSuperiorCafe16" type="MeshInstance3D" parent="barrasSuperiores"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.57809, 2.12474, -0.108804)
+mesh = SubResource("BoxMesh_fhetq")
+skeleton = NodePath("")
