@@ -429,7 +429,7 @@ mesh = SubResource("BoxMesh_i8jcv")
 skeleton = NodePath("../../../../MeshInstance3D2")
 
 [node name="MeshInstance3D11" type="MeshInstance3D" parent="Mural/Steel Stairs/Steel Stairs horizontal"]
-transform = Transform3D(1.02835e+07, 0, 0, 0, 61.0036, 0, 0, 0, 3.2122e+08, -1.406e+07, 4695.56, 6.98963e+07)
+transform = Transform3D(1.02835e+07, 0, 0, 0, 61.0036, 0, 0, 0, 4.03797e+08, -1.406e+07, 4745.89, 2.83448e+07)
 material_override = ExtResource("3_qj3b0")
 mesh = SubResource("BoxMesh_i8jcv")
 skeleton = NodePath("../../../../MeshInstance3D2")
