@@ -98,7 +98,7 @@ material_override = SubResource("StandardMaterial3D_eo72q")
 mesh = SubResource("PlaneMesh_8bib7")
 
 [node name="Parking Spot" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1.41121e-06, 0, 22.7099, 0, 0.996114, 0, -32.2846, 0, -9.92682e-07, -68.2475, 4.55379, -32.8166)
+transform = Transform3D(-1.41121e-06, 0, 22.7099, 0, 0.996114, 0, -32.2846, 0, -9.92682e-07, -68.2475, 4.55379, -8.75899)
 material_override = SubResource("StandardMaterial3D_100bp")
 mesh = SubResource("PlaneMesh_8bib7")
 
@@ -116,6 +116,21 @@ transform = Transform3D(-2.32867e-09, 0.00627396, 0.0572165, 2.01767e-11, 1.7535
 
 [node name="car5" parent="Parking Spot" instance=ExtResource("4_eo72q")]
 transform = Transform3D(-2.32867e-09, 0.00627396, 0.0572165, 2.01767e-11, 1.75351, -0.000204717, -0.0532746, 3.89868e-10, -2.50105e-09, 0.751572, 0, 0.705091)
+
+[node name="car6" parent="Parking Spot" instance=ExtResource("4_eo72q")]
+transform = Transform3D(-2.32867e-09, 0.00627396, 0.0572165, 2.01767e-11, 1.75351, -0.000204717, -0.0532746, 3.89868e-10, -2.50105e-09, 0.751572, 0, -0.495543)
+
+[node name="car7" parent="Parking Spot" instance=ExtResource("4_eo72q")]
+transform = Transform3D(-2.32867e-09, 0.00627396, 0.0572165, 2.01767e-11, 1.75351, -0.000204717, -0.0532746, 3.89868e-10, -2.50105e-09, 0.751572, 0, -0.371842)
+
+[node name="car8" parent="Parking Spot" instance=ExtResource("4_eo72q")]
+transform = Transform3D(-2.32867e-09, 0.00627396, 0.0572165, 2.01767e-11, 1.75351, -0.000204717, -0.0532746, 3.89868e-10, -2.50105e-09, 0.751572, 0, -0.239701)
+
+[node name="car9" parent="Parking Spot" instance=ExtResource("4_eo72q")]
+transform = Transform3D(-2.32867e-09, 0.00627396, 0.0572165, 2.01767e-11, 1.75351, -0.000204717, -0.0532746, 3.89868e-10, -2.50105e-09, 0.751572, 0, -0.110274)
+
+[node name="car10" parent="Parking Spot" instance=ExtResource("4_eo72q")]
+transform = Transform3D(-2.32867e-09, 0.00627396, 0.0572165, 2.01767e-11, 1.75351, -0.000204717, -0.0532746, 3.89868e-10, -2.50105e-09, 0.751572, 0, 0.0280395)
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
 transform = Transform3D(2.05349, 0, 0, 0, 1.57656, 0, 0, 0, 12.5463, 2.95098, 1.03132, -12.3247)
