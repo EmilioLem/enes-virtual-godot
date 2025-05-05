@@ -1,8 +1,12 @@
 [gd_scene load_steps=6 format=3 uid="uid://cb8klhv6nwvtl"]
 
-[ext_resource type="Script" path="res://addons/simplegrasstextured/about.gd" id="1_r23hh"]
-[ext_resource type="Material" uid="uid://cl74usvfymgvs" path="res://addons/simplegrasstextured/materials/icon.material" id="2_4glo1"]
-[ext_resource type="Texture2D" uid="uid://cubr1a55brlfp" path="res://addons/simplegrasstextured/sgt_icon_48.svg" id="3_7w1su"]
+[ext_resource type="Texture2D" uid="uid://cubr1a55brlfp" path="res://downloaded_assets/SimpleGrassTextured-ec420fca7ffe4e90dad83b6391649c773a3b9ae6/addons/simplegrasstextured/sgt_icon_48.svg" id="3_7w1su"]
+
+[sub_resource type="Resource" id="Resource_ppb7t"]
+metadata/__load_path__ = "res://addons/simplegrasstextured/about.gd"
+
+[sub_resource type="Resource" id="Resource_uqgxj"]
+metadata/__load_path__ = "res://addons/simplegrasstextured/materials/icon.material"
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hnw4u"]
 
@@ -14,7 +18,7 @@ position = Vector2i(0, 36)
 size = Vector2i(520, 240)
 min_size = Vector2i(520, 200)
 max_size = Vector2i(1280, 720)
-script = ExtResource("1_r23hh")
+script = SubResource("Resource_ppb7t")
 message = "Simple Grass Textured Plugin
 v. {_version_num}
 by IcterusGames
@@ -42,7 +46,7 @@ layout_mode = 2
 theme_override_constants/separation = 20
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
-material = ExtResource("2_4glo1")
+material = SubResource("Resource_uqgxj")
 custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
 texture = ExtResource("3_7w1su")

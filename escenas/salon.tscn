@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://bvv30it10xigl"]
+[gd_scene load_steps=19 format=3 uid="uid://bvv30it10xigl"]
 
 [ext_resource type="Material" uid="uid://c3wrr772bolc2" path="res://materiales/pisoLoceta2.tres" id="1_1elns"]
 [ext_resource type="Material" uid="uid://hgnt1o0yoyps" path="res://materiales/pisoLoceta.tres" id="1_k6r0r"]
+[ext_resource type="Material" uid="uid://bsmb6lt1qvbm" path="res://materiales/iron.tres" id="2_r4nxm"]
 [ext_resource type="Material" uid="uid://6w7jfbs32x28" path="res://materiales/materialPizarron.tres" id="3_j1nf1"]
 [ext_resource type="PackedScene" uid="uid://bkxyffcag7cug" path="res://assets/silla.tscn" id="4_v3uhc"]
 [ext_resource type="PackedScene" uid="uid://b1chuojd01nu3" path="res://assets/mesa.tscn" id="5_j1nf1"]
@@ -31,18 +32,23 @@ size = Vector3(6.55, 2.31, 0.065)
 [sub_resource type="BoxMesh" id="BoxMesh_c35xq"]
 size = Vector3(0.25, 2.3, 0.25)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_01p35"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xns5u"]
 transparency = 1
 blend_mode = 1
 
 [sub_resource type="BoxMesh" id="BoxMesh_g08vo"]
-material = SubResource("StandardMaterial3D_01p35")
+material = SubResource("StandardMaterial3D_xns5u")
 size = Vector3(0.345, 1.3, 0.02)
 
 [node name="Salon" type="Node3D"]
 
 [node name="Piso" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38, 0, -1.115)
+mesh = SubResource("PlaneMesh_o16df")
+
+[node name="Piso2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38, 2.33244, -1.115)
+material_override = ExtResource("2_r4nxm")
 mesh = SubResource("PlaneMesh_o16df")
 
 [node name="pisoFirme" type="MeshInstance3D" parent="."]

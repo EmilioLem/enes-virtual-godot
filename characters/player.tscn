@@ -19,13 +19,16 @@ spring_length = 2.0
 script = ExtResource("2_o1ykh")
 
 [node name="Camera3D" type="Camera3D" parent="SpringArmPivot/SpringArm3D"]
+transform = Transform3D(1.00508, 0, 0, 0, 1.00508, 0, 0, 0, 1.00508, 0, 0, 0)
+fov = 80.0144
 script = ExtResource("2_ws1gh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.0145932)
 shape = SubResource("CapsuleShape3D_8x2is")
 
 [node name="CharacterManager" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0701423)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterManager"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
