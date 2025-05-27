@@ -83,7 +83,7 @@ material_override = SubResource("StandardMaterial3D_2ghso")
 mesh = SubResource("PlaneMesh_8bib7")
 
 [node name="Road" type="MeshInstance3D" parent="."]
-transform = Transform3D(-8.80795e-07, 0, 22.7099, 0, 0.996114, 0, -20.1502, 0, -9.92682e-07, -8.71353, 4.4661, -71.2639)
+transform = Transform3D(-7.15936e-07, 0, 28.9056, 0, 0.994942, 0, -16.3787, 0, -1.26351e-06, -8.71353, 4.4661, -71.2639)
 material_override = SubResource("StandardMaterial3D_eo72q")
 mesh = SubResource("PlaneMesh_8bib7")
 
@@ -119,6 +119,9 @@ transform = Transform3D(-2.32867e-09, 0.00627396, 0.0572165, 2.01767e-11, 1.7535
 
 [node name="car6" parent="Parking Spot" instance=ExtResource("4_eo72q")]
 transform = Transform3D(-2.32867e-09, 0.00627396, 0.0572165, 2.01767e-11, 1.75351, -0.000204717, -0.0532746, 3.89868e-10, -2.50105e-09, 0.751572, 0, -0.495543)
+
+[node name="car11" parent="Parking Spot" instance=ExtResource("4_eo72q")]
+transform = Transform3D(-2.32867e-09, 0.00627396, 0.0572165, 2.01767e-11, 1.75351, -0.000204717, -0.0532746, 3.89868e-10, -2.50105e-09, 0.751572, 0, -0.639113)
 
 [node name="car7" parent="Parking Spot" instance=ExtResource("4_eo72q")]
 transform = Transform3D(-2.32867e-09, 0.00627396, 0.0572165, 2.01767e-11, 1.75351, -0.000204717, -0.0532746, 3.89868e-10, -2.50105e-09, 0.751572, 0, -0.371842)
